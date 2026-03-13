@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<!-- Important for Android scaling -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Bea Birthday Gift</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
@@ -83,7 +80,7 @@ box-shadow:0 8px 25px rgba(0,0,0,0.08);
 margin-bottom:20px;
 }
 
-/* text alignment */
+/* text */
 
 section p{
 text-align:justify;
@@ -95,16 +92,20 @@ font-size:15px;
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(90px,1fr));
+grid-template-columns:repeat(3,1fr);
 gap:10px;
 margin-top:10px;
 }
 
+/* image container */
+
 .gallery img{
 width:100%;
-height:90px;
-object-fit:cover;
+aspect-ratio:1/1;
+object-fit:contain;
+background:#fff8d6;
 border-radius:12px;
+padding:4px;
 }
 
 /* reminders */
@@ -115,13 +116,13 @@ line-height:1.7;
 font-size:15px;
 }
 
-/* hide main page */
+/* hide */
 
 .hidden{
 display:none;
 }
 
-/* ----------- MOBILE IMPROVEMENTS ----------- */
+/* mobile */
 
 @media (max-width:480px){
 
@@ -145,22 +146,6 @@ font-size:14px;
 font-size:14px;
 }
 
-.gallery img{
-height:80px;
-}
-
-}
-
-@media (max-width:360px){
-
-h1{
-font-size:20px;
-}
-
-h2{
-font-size:17px;
-}
-
 }
 
 </style>
@@ -169,8 +154,6 @@ font-size:17px;
 <body>
 
 <div class="scroll-container">
-
-<!-- FIRST PAGE -->
 
 <div id="startPage" class="card">
 
@@ -185,8 +168,6 @@ font-size:17px;
 </div>
 
 
-<!-- MAIN PAGE -->
-
 <div id="mainPage" class="hidden">
 
 <h1 id="title"></h1>
@@ -197,7 +178,7 @@ font-size:17px;
 
 <p>
 
-Hi Kambal! 💛 I made this little birthday surprise especially for you.  
+Hi Kambal! 💛 I made this little birthday surprise especially for you.
 
 <br><br>
 
@@ -237,10 +218,10 @@ I often notice that you overthink a lot, and I hope you remember to be gentle wi
 
 <ul>
 
-<li>Drink water💛</li>
+<li>Drink water</li>
 <li>Take short breaks ✨</li>
 <li>Smile at yourself 🌼</li>
-<li>Don't overthink too much💛</li>
+<li>Don't overthink too much</li>
 <li>Padayon future Teacher namin! ✨</li>
 <li>You’re loved, always 🌼</li>
 
@@ -265,7 +246,6 @@ return;
 }
 
 document.getElementById("startPage").style.display="none";
-
 document.getElementById("mainPage").classList.remove("hidden");
 
 document.getElementById("title").innerText="Welcome, " + name + " 🌼";
@@ -275,5 +255,4 @@ document.getElementById("title").innerText="Welcome, " + name + " 🌼";
 </script>
 
 </body>
-
 </html>
