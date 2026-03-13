@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 *{
   box-sizing: border-box;
 }
@@ -78,11 +77,10 @@ section p{
   font-size:15px;
 }
 
-/* 3 photos per row on desktop/tablet, horizontal scroll on small screens */
-
+/* Gallery: 3 images per row */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:10px;
   margin-top:10px;
 }
@@ -93,22 +91,20 @@ section p{
   object-fit:contain;
   border-radius:12px;
   padding:4px;
-  max-height:220px;
 }
 
-/* horizontal scroll for phones */
+/* Make it fit small screens without scroll */
 @media (max-width:480px){
   .gallery{
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
-    padding-bottom:10px;
+    grid-template-columns:repeat(3, 1fr); /* still 3 per row */
+    gap:5px;
   }
+
   .gallery img{
-    flex:0 0 auto;
-    width:140px; /* adjust width per photo */
-    max-height:none;
+    max-height:100px; /* smaller so all fit */
+    padding:2px;
   }
+
   h1{
     font-size:22px;
   }
@@ -136,7 +132,6 @@ section p{
 .hidden{
   display:none;
 }
-
 </style>
 </head>
 <body>
@@ -146,11 +141,8 @@ section p{
 <div id="startPage" class="card">
 
 <h1>Hello, Kambal Bea! 🌼</h1>
-
 <p>Enter your name to open your Birthday surprise!</p>
-
 <input type="text" id="nameInput" placeholder="Your name">
-
 <button onclick="openGift()">Continue</button>
 
 </div>
@@ -160,45 +152,26 @@ section p{
 <h1 id="title"></h1>
 
 <section class="letter">
-
 <h2>A little Letter for you!!!</h2>
-
 <p>
-
-Hi Kambal! 💛 I made this little birthday surprise especially for you.
-
-<br><br>
-
-May it bring you warmth, joy, and lots of smiles today! 💛 I am thankful to be able to celebrate my birthday the same day as you.
-
-<br><br>
-
-May this remind you that if you ever need a shoulder to cry on, andito lang akeshh. I know you are not the type to easily open up, but I hope one day you can rely on me too. ✨🌼
-
-<br><br>
-
+Hi Kambal! 💛 I made this little birthday surprise especially for you.<br><br>
+May it bring you warmth, joy, and lots of smiles today! 💛 I am thankful to be able to celebrate my birthday the same day as you.<br><br>
+May this remind you that if you ever need a shoulder to cry on, andito lang akeshh. I know you are not the type to easily open up, but I hope one day you can rely on me too. ✨🌼<br><br>
 I often notice that you overthink a lot, and I hope you remember to be gentle with yourself sometimes. I also hope we can hang out more often. Iwasan mo mag-absent please, hehe.
-
 </p>
-
 </section>
 
 <section class="gallery-section">
-
 <h2>📸 Memories</h2>
-
 <div class="gallery">
 <img src="img/pic1.jpg" alt="Pic1">
 <img src="img/pic2.jpg" alt="Pic2">
 <img src="img/pic3.jpg" alt="Pic3">
 </div>
-
 </section>
 
 <section class="reminders">
-
 <h2>✨ Reminders for our future teacher</h2>
-
 <ul>
 <li>Drink water💛</li>
 <li>Take short breaks ✨</li>
@@ -207,7 +180,6 @@ I often notice that you overthink a lot, and I hope you remember to be gentle wi
 <li>Padayon future Teacher namin! ✨</li>
 <li>You’re loved, always 🌼</li>
 </ul>
-
 </section>
 
 </div>
@@ -215,7 +187,6 @@ I often notice that you overthink a lot, and I hope you remember to be gentle wi
 </div>
 
 <script>
-
 function openGift(){
   const name=document.getElementById("nameInput").value.trim();
   if(!name){
@@ -226,7 +197,6 @@ function openGift(){
   document.getElementById("mainPage").classList.remove("hidden");
   document.getElementById("title").innerText="Welcome, " + name + " 🌼";
 }
-
 </script>
 
 </body>
