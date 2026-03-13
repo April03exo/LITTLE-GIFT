@@ -78,7 +78,7 @@ section p{
   font-size:15px;
 }
 
-/* 3 photos per row, bigger, no crop */
+/* 3 photos per row on desktop/tablet, horizontal scroll on small screens */
 
 .gallery{
   display:grid;
@@ -89,30 +89,26 @@ section p{
 
 .gallery img{
   width:100%;
-  height:auto; /* keep full image */
-  object-fit:contain; /* no cropping */
+  height:auto;
+  object-fit:contain;
   border-radius:12px;
   padding:4px;
-  max-height:220px; /* slightly bigger, adjust as needed */
+  max-height:220px;
 }
 
-/* Reminders */
-.reminders ul{
-  padding-left:18px;
-  line-height:1.7;
-  font-size:15px;
-}
-
-.hidden{
-  display:none;
-}
-
-/* Mobile tweaks */
+/* horizontal scroll for phones */
 @media (max-width:480px){
   .gallery{
-    grid-template-columns:repeat(2,1fr); /* 2 per row on phones */
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding-bottom:10px;
   }
-
+  .gallery img{
+    flex:0 0 auto;
+    width:140px; /* adjust width per photo */
+    max-height:none;
+  }
   h1{
     font-size:22px;
   }
@@ -128,6 +124,17 @@ section p{
   .reminders ul{
     font-size:14px;
   }
+}
+
+/* Reminders */
+.reminders ul{
+  padding-left:18px;
+  line-height:1.7;
+  font-size:15px;
+}
+
+.hidden{
+  display:none;
 }
 
 </style>
