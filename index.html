@@ -10,147 +10,128 @@
 <style>
 
 *{
-box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 body{
-margin:0;
-font-family:'Quicksand',sans-serif;
-background:linear-gradient(135deg,#fff8d6,#ffeaa6);
-color:#c48f2f;
+  margin:0;
+  font-family:'Quicksand',sans-serif;
+  background: linear-gradient(135deg,#fff8d6,#ffeaa6);
+  color:#c48f2f;
 }
-
-/* container */
 
 .scroll-container{
-width:100%;
-max-width:500px;
-margin:auto;
-padding:30px 16px;
+  width:100%;
+  max-width:520px;
+  margin:auto;
+  padding:30px 16px;
 }
-
-/* headings */
 
 h1,h2{
-text-align:center;
+  text-align:center;
 }
 
-/* card */
-
 .card{
-background:white;
-padding:30px 20px;
-border-radius:20px;
-box-shadow:0 12px 30px rgba(0,0,0,0.15);
-text-align:center;
-margin-bottom:25px;
+  background:white;
+  padding:30px 20px;
+  border-radius:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  text-align:center;
+  margin-bottom:25px;
 }
 
 .card input{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #e6c56a;
-margin-bottom:15px;
-font-size:16px;
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #e6c56a;
+  margin-bottom:15px;
+  font-size:16px;
 }
 
 .card button{
-width:100%;
-padding:14px;
-border:none;
-background:#f4c542;
-color:white;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
+  width:100%;
+  padding:14px;
+  border:none;
+  background:#f4c542;
+  color:white;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
 }
 
 .card button:hover{
-background:#e0b231;
+  background:#e0b231;
 }
-
-/* sections */
 
 section{
-background:linear-gradient(135deg,#fffdf0,#fff5d6);
-padding:20px;
-border-radius:20px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-margin-bottom:20px;
+  background:linear-gradient(135deg,#fffdf0,#fff5d6);
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  margin-bottom:20px;
 }
-
-/* text */
 
 section p{
-text-align:justify;
-line-height:1.8;
-font-size:15px;
+  text-align:justify;
+  line-height:1.8;
+  font-size:15px;
 }
 
-/* gallery */
+/* 3 photos per row, bigger, no crop */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:10px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:10px;
 }
-
-/* image container */
 
 .gallery img{
-width:100%;
-aspect-ratio:1/1;
-object-fit:contain;
-background:#fff8d6;
-border-radius:12px;
-padding:4px;
+  width:100%;
+  height:auto; /* keep full image */
+  object-fit:contain; /* no cropping */
+  border-radius:12px;
+  padding:4px;
+  max-height:220px; /* slightly bigger, adjust as needed */
 }
 
-/* reminders */
-
+/* Reminders */
 .reminders ul{
-padding-left:18px;
-line-height:1.7;
-font-size:15px;
+  padding-left:18px;
+  line-height:1.7;
+  font-size:15px;
 }
-
-/* hide */
 
 .hidden{
-display:none;
+  display:none;
 }
 
-/* mobile */
-
+/* Mobile tweaks */
 @media (max-width:480px){
+  .gallery{
+    grid-template-columns:repeat(2,1fr); /* 2 per row on phones */
+  }
 
-.scroll-container{
-padding:20px 14px;
-}
+  h1{
+    font-size:22px;
+  }
 
-h1{
-font-size:22px;
-}
+  h2{
+    font-size:18px;
+  }
 
-h2{
-font-size:18px;
-}
+  section p{
+    font-size:14px;
+  }
 
-section p{
-font-size:14px;
-}
-
-.reminders ul{
-font-size:14px;
-}
-
+  .reminders ul{
+    font-size:14px;
+  }
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="scroll-container">
@@ -167,7 +148,6 @@ font-size:14px;
 
 </div>
 
-
 <div id="mainPage" class="hidden">
 
 <h1 id="title"></h1>
@@ -182,7 +162,7 @@ Hi Kambal! 💛 I made this little birthday surprise especially for you.
 
 <br><br>
 
-May it bring you warmth, joy, and lots of smiles today! 💛 I am thankful to be able to celebrate my birthday the same as you.
+May it bring you warmth, joy, and lots of smiles today! 💛 I am thankful to be able to celebrate my birthday the same day as you.
 
 <br><br>
 
@@ -196,35 +176,29 @@ I often notice that you overthink a lot, and I hope you remember to be gentle wi
 
 </section>
 
-
 <section class="gallery-section">
 
 <h2>📸 Memories</h2>
 
 <div class="gallery">
-
-<img src="img/pic1.jpg">
-<img src="img/pic2.jpg">
-<img src="img/pic3.jpg">
-
+<img src="img/pic1.jpg" alt="Pic1">
+<img src="img/pic2.jpg" alt="Pic2">
+<img src="img/pic3.jpg" alt="Pic3">
 </div>
 
 </section>
-
 
 <section class="reminders">
 
 <h2>✨ Reminders for our future teacher</h2>
 
 <ul>
-
-<li>Drink water</li>
+<li>Drink water💛</li>
 <li>Take short breaks ✨</li>
 <li>Smile at yourself 🌼</li>
-<li>Don't overthink too much</li>
+<li>Don't overthink too much💛</li>
 <li>Padayon future Teacher namin! ✨</li>
 <li>You’re loved, always 🌼</li>
-
 </ul>
 
 </section>
@@ -233,23 +207,17 @@ I often notice that you overthink a lot, and I hope you remember to be gentle wi
 
 </div>
 
-
 <script>
 
 function openGift(){
-
-const name=document.getElementById("nameInput").value.trim();
-
-if(!name){
-alert("Please enter your name.");
-return;
-}
-
-document.getElementById("startPage").style.display="none";
-document.getElementById("mainPage").classList.remove("hidden");
-
-document.getElementById("title").innerText="Welcome, " + name + " 🌼";
-
+  const name=document.getElementById("nameInput").value.trim();
+  if(!name){
+    alert("Please enter your name.");
+    return;
+  }
+  document.getElementById("startPage").style.display="none";
+  document.getElementById("mainPage").classList.remove("hidden");
+  document.getElementById("title").innerText="Welcome, " + name + " 🌼";
 }
 
 </script>
